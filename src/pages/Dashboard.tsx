@@ -40,7 +40,7 @@ const Dashboard = () => {
                 <p className="text-sm text-muted-foreground">Indisponível</p>
               ) : (
                 <p className="text-3xl font-semibold">
-                  {stats?.numberOfPredictions ?? 0}
+                  {stats?.numeroDePrevisoes ?? 0}
                 </p>
               )}
             </CardContent>
@@ -60,8 +60,8 @@ const Dashboard = () => {
                 <p className="text-sm text-muted-foreground">Indisponível</p>
               ) : (
                 <p className="text-3xl font-semibold">
-                  {stats?.meanChurnProbability !== undefined
-                    ? `${(stats.meanChurnProbability * 100).toFixed(1)}%`
+                  {stats?.churnMedio !== undefined
+                    ? `${(stats.churnMedio * 100).toFixed(1)}%`
                     : '0%'}
                 </p>
               )}

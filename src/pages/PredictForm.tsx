@@ -25,19 +25,19 @@ const PredictForm = () => {
   const { toast } = useToast();
   
   const [formData, setFormData] = useState<PredictionRequest>({
-    creditScore: 650,
-    geography: 'France',
-    gender: 'Male',
-    age: 35,
-    tenure: 5,
-    balance: 50000,
-    numOfProducts: 1,
-    hasCrCard: true,
-    isActiveMember: true,
-    satisfaction: 3,
-    estimatedSalary: 50000,
-    pointsEarned: 500,
-    cardType: 'SILVER',
+    CreditScore: 650,
+    Geography: 'France',
+    Gender: 'Male',
+    Age: 35,
+    Tenure: 5,
+    Balance: 50000,
+    NumOfProducts: 1,
+    HasCrCard: true,
+    IsActiveMember: true,
+    Satisfaction_Score: 3,
+    EstimatedSalary: 50000,
+    Point_Earned: 500,
+    CardType: 'SILVER',
   });
 
   const mutation = useMutation({
@@ -94,46 +94,46 @@ const PredictForm = () => {
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-3">
               <div className="space-y-2">
-                <Label htmlFor="gender">Gênero</Label>
+                <Label htmlFor="Gender">Gênero</Label>
                 <Select
-                  value={formData.gender}
-                  onValueChange={(v: Gender) => updateField('gender', v)}
+                  value={formData.Gender}
+                  onValueChange={(v: Gender) => updateField('Gender', v)}
                 >
-                  <SelectTrigger id="gender">
+                  <SelectTrigger id="Gender">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Male">Masculino</SelectItem>
-                    <SelectItem value="Female">Feminino</SelectItem>
+                    <SelectItem value="MALE">Masculino</SelectItem>
+                    <SelectItem value="FEMALE">Feminino</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="age">Idade</Label>
+                <Label htmlFor="Age">Idade</Label>
                 <Input
-                  id="age"
+                  id="Age"
                   type="number"
                   min={18}
                   max={100}
-                  value={formData.age}
-                  onChange={(e) => updateField('age', Number(e.target.value))}
+                  value={formData.Age}
+                  onChange={(e) => updateField('Age', Number(e.target.value))}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="geography">País</Label>
+                <Label htmlFor="Geography">País</Label>
                 <Select
-                  value={formData.geography}
-                  onValueChange={(v: Geography) => updateField('geography', v)}
+                  value={formData.Geography}
+                  onValueChange={(v: Geography) => updateField('Geography', v)}
                 >
-                  <SelectTrigger id="geography">
+                  <SelectTrigger id="Geography">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="France">França</SelectItem>
-                    <SelectItem value="Spain">Espanha</SelectItem>
-                    <SelectItem value="Germany">Alemanha</SelectItem>
+                    <SelectItem value="FRANCE">França</SelectItem>
+                    <SelectItem value="SPAIN">Espanha</SelectItem>
+                    <SelectItem value="GERMANY">Alemanha</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -147,14 +147,14 @@ const PredictForm = () => {
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-3">
               <div className="space-y-2">
-                <Label htmlFor="creditScore">Score de Crédito</Label>
+                <Label htmlFor="CreditScore">Score de Crédito</Label>
                 <Input
-                  id="creditScore"
+                  id="CreditScore"
                   type="number"
-                  min={300}
+                  min={50}
                   max={850}
-                  value={formData.creditScore}
-                  onChange={(e) => updateField('creditScore', Number(e.target.value))}
+                  value={formData.CreditScore}
+                  onChange={(e) => updateField('CreditScore', Number(e.target.value))}
                 />
               </div>
 
@@ -164,19 +164,19 @@ const PredictForm = () => {
                   id="balance"
                   type="number"
                   min={0}
-                  value={formData.balance}
-                  onChange={(e) => updateField('balance', Number(e.target.value))}
+                  value={formData.Balance}
+                  onChange={(e) => updateField('Balance', Number(e.target.value))}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="estimatedSalary">Salário Estimado (€)</Label>
+                <Label htmlFor="EstimatedSalary">Salário Estimado (€)</Label>
                 <Input
-                  id="estimatedSalary"
+                  id="EstimatedSalary"
                   type="number"
                   min={0}
-                  value={formData.estimatedSalary}
-                  onChange={(e) => updateField('estimatedSalary', Number(e.target.value))}
+                  value={formData.EstimatedSalary}
+                  onChange={(e) => updateField('EstimatedSalary', Number(e.target.value))}
                 />
               </div>
             </CardContent>
@@ -190,48 +190,48 @@ const PredictForm = () => {
             <CardContent className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="space-y-2">
-                  <Label htmlFor="tenure">Tempo de Conta (anos)</Label>
+                  <Label htmlFor="Tenure">Tempo de Conta (anos)</Label>
                   <Input
-                    id="tenure"
+                    id="Tenure"
                     type="number"
                     min={0}
-                    max={10}
-                    value={formData.tenure}
-                    onChange={(e) => updateField('tenure', Number(e.target.value))}
+                    max={50}
+                    value={formData.Tenure}
+                    onChange={(e) => updateField('Tenure', Number(e.target.value))}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="numOfProducts">Número de Produtos</Label>
+                  <Label htmlFor="NumOfProducts">Número de Produtos</Label>
                   <Input
-                    id="numOfProducts"
+                    id="NumOfProducts"
                     type="number"
                     min={1}
                     max={4}
-                    value={formData.numOfProducts}
-                    onChange={(e) => updateField('numOfProducts', Number(e.target.value))}
+                    value={formData.NumOfProducts}
+                    onChange={(e) => updateField('NumOfProducts', Number(e.target.value))}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="pointsEarned">Pontos Acumulados</Label>
+                  <Label htmlFor="Point_Earned">Pontos Acumulados</Label>
                   <Input
-                    id="pointsEarned"
+                    id="Point_Earned"
                     type="number"
                     min={0}
-                    value={formData.pointsEarned}
-                    onChange={(e) => updateField('pointsEarned', Number(e.target.value))}
+                    value={formData.Point_Earned}
+                    onChange={(e) => updateField('Point_Earned', Number(e.target.value))}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="cardType">Tipo de Cartão</Label>
+                <Label htmlFor="CardType">Tipo de Cartão</Label>
                 <Select
-                  value={formData.cardType}
-                  onValueChange={(v: CardType) => updateField('cardType', v)}
+                  value={formData.CardType}
+                  onValueChange={(v: CardType) => updateField('CardType', v)}
                 >
-                  <SelectTrigger id="cardType" className="sm:w-48">
+                  <SelectTrigger id="CardType" className="sm:w-48">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -246,20 +246,20 @@ const PredictForm = () => {
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex items-center gap-3">
                   <Switch
-                    id="hasCrCard"
-                    checked={formData.hasCrCard}
-                    onCheckedChange={(v) => updateField('hasCrCard', v)}
+                    id="HasCrCard"
+                    checked={formData.HasCrCard}
+                    onCheckedChange={(v) => updateField('HasCrCard', v)}
                   />
-                  <Label htmlFor="hasCrCard">Possui Cartão de Crédito</Label>
+                  <Label htmlFor="HasCrCard">Possui Cartão de Crédito</Label>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <Switch
-                    id="isActiveMember"
-                    checked={formData.isActiveMember}
-                    onCheckedChange={(v) => updateField('isActiveMember', v)}
+                    id="IsActiveMember"
+                    checked={formData.IsActiveMember}
+                    onCheckedChange={(v) => updateField('IsActiveMember', v)}
                   />
-                  <Label htmlFor="isActiveMember">Membro Ativo</Label>
+                  <Label htmlFor="IsActiveMember">Membro Ativo</Label>
                 </div>
               </div>
 
@@ -267,12 +267,12 @@ const PredictForm = () => {
                 <div className="flex items-center justify-between">
                   <Label>Satisfação</Label>
                   <span className="text-sm text-muted-foreground">
-                    {formData.satisfaction} / 5
+                    {formData.Satisfaction_Score} / 5
                   </span>
                 </div>
                 <Slider
-                  value={[formData.satisfaction]}
-                  onValueChange={([v]) => updateField('satisfaction', v)}
+                  value={[formData.Satisfaction_Score]}
+                  onValueChange={([v]) => updateField('Satisfaction_Score', v)}
                   min={1}
                   max={5}
                   step={1}

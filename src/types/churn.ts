@@ -5,30 +5,31 @@ export type CardType = 'SILVER' | 'GOLD' | 'PLATINUM' | 'DIAMOND';
 
 // Request DTO for prediction
 export interface PredictionRequest {
-  creditScore: number;
-  geography: Geography;
-  gender: Gender;
-  age: number;
-  tenure: number;
-  balance: number;
-  numOfProducts: number;
-  hasCrCard: boolean;
-  isActiveMember: boolean;
-  satisfaction: number;
-  estimatedSalary: number;
-  pointsEarned: number;
-  cardType: CardType;
+  CreditScore: number;
+  Geography: Geography;
+  Gender: Gender;
+  Age: number;
+  Tenure: number;
+  Balance: number;
+  NumOfProducts: number;
+  HasCrCard: boolean;
+  IsActiveMember: boolean;
+  Satisfaction_Score: number;
+  EstimatedSalary: number;
+  Point_Earned: number;
+  CardType: CardType;
 }
 
 // Response DTO from prediction
 export interface PredictionResponse {
-  churnProbability: number;
-  willChurn: boolean;
-  predictedAt: string;
+  churn_probability: number;
+  prediction: boolean;
+  risk_message: string,
+  timeStamp: string;
 }
 
 // Stats response
 export interface StatsResponse {
-  numberOfPredictions: number;
-  meanChurnProbability: number;
+  numeroDePrevisoes: number;
+  churnMedio: number;
 }

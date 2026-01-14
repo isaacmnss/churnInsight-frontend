@@ -13,7 +13,7 @@ export async function fetchStats(): Promise<StatsResponse> {
 }
 
 export async function predict(data: PredictionRequest): Promise<PredictionResponse> {
-  const response = await fetch(`${API_BASE_URL}/predict`, {
+  const response = await fetch(`${API_BASE_URL}/prediction`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

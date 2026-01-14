@@ -12,7 +12,7 @@ const Result = () => {
     return <Navigate to="/" replace />;
   }
 
-  const probability = result.churnProbability * 100;
+  const probability = result.churn_probability * 100;
   const riskLevel =
     probability < 30 ? 'low' : probability < 60 ? 'medium' : 'high';
   
@@ -77,14 +77,14 @@ const Result = () => {
             {/* Verdict */}
             <div className="pt-4 border-t border-border">
               <p className="text-lg">
-                Veredicto:{' '}
+                Veredito:{' '}
                 <span className="font-semibold">
-                  {result.willChurn ? 'Vai cancelar' : 'Não vai cancelar'}
+                  {result.prediction ? 'Vai cancelar' : 'Não vai cancelar'}
                 </span>
               </p>
               <p className="text-sm text-muted-foreground mt-2">
                 Analisado em{' '}
-                {new Date(result.predictedAt).toLocaleString('pt-BR')}
+                {new Date(result.timeStamp).toLocaleString('pt-BR')}
               </p>
             </div>
           </CardContent>
