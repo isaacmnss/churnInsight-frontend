@@ -1,6 +1,6 @@
 import type { PredictionRequest, PredictionResponse, StatsResponse } from '@/types/churn';
 
-const API_BASE_URL = 'http://localhost:8080/v1';
+const API_BASE_URL = import.meta.env.VITE_URL_BASE_API;
 
 export async function fetchStats(): Promise<StatsResponse> {
   const response = await fetch(`${API_BASE_URL}/stats`);
